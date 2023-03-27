@@ -2,19 +2,20 @@
 #include<stdlib.h>
 #include<time.h>
 #include<stdbool.h>
+#include<locale.h>
 
 int main(){
 	int a;
 	while(1){
 	
-printf("********************************************\n");
+printf("\n********************************************\n");
 printf("*                                          *\n");
 printf("*                 ARCADE                   *\n");
 printf("*                                          *\n");
 printf("********************************************\n");
 printf("*                                          *\n");
 printf("*                                          *\n");
-printf("*              GIRAS ARCADE                *\n");
+printf("*               GIRAS ARCADE               *\n");
 printf("*                                          *\n");
 printf("*    Escolha o que desejas jogar           *\n");
 printf("*                                          *\n");
@@ -24,16 +25,15 @@ printf("*    3) Gousmas War                        *\n");
 printf("*    4) Sair                               *\n");
 printf("*                                          *\n");
 printf("*                                          *\n");
+printf("********************************************\n");
 printf("*                                          *\n");
-printf("*                                          *\n");
-printf("*                                          *\n");
+printf("*                 ARCADE                   *\n");
 printf("*                                          *\n");
 printf("********************************************\n");
 printf("*                                          *\n");
-printf("*      *                         *         *\n");
-printf("*     * *                        |         *\n");
-printf("*      *                                   *\n");
-printf("*                                          *\n");
+printf("*         *                   *            *\n");
+printf("*        * *                  |            *\n");
+printf("*         *                                *\n");
 printf("*                                          *\n");
 printf("*                                          *\n");
 printf("********************************************\n");
@@ -93,7 +93,7 @@ switch(a){
 		}else{
 			printf("Resposta invalida");
 		}
-		printf("PERGUNTA 4: QUEM É PEDRO GIROTTO?\n");
+		printf("PERGUNTA 4: QUEM EH PEDRO GIROTTO?\n");
 		printf("a)Professor de programacao do Cesupa\n");
 		printf("b)Morador de Cotijuba\n");
 		printf("c)Porteiro\n");
@@ -106,7 +106,7 @@ switch(a){
 		else{
 			printf("\nVOCE ERROU :(\n\n");
 		}
-		printf("PERGUNTA 5: Qaunto eh 1+1?\n");
+		printf("PERGUNTA 5: QUANTO EH 1+1?\n");
 		printf("a)44\n");
 		printf("b)1\n");
 		printf("c)2\n");
