@@ -194,10 +194,10 @@ switch(a){
 				break;
 			}else{
 				printf("Nao havia nada na caixa\n");
-				
+				jogador = jogador == 1 ? 2 : 1;
 				caixa[escolha-1] = 1;
 			}
-				jogador = jogador == 1 ? 2 : 1;
+				
 		}
 	}
 	    printf("O que desejas fazer agora?\n");
