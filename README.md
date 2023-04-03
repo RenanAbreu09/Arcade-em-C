@@ -47,7 +47,13 @@ switch(a){
 		system("cls");
 		char r;
 		int x;
+		int acertos, erros;
+	
+	acertos = 0;
+	erros = 0;	
 		printf("\nJOGO DE PERGUNTAS E RESPOSTA\n\n");
+		printf("Erros: %i\n", erros);
+		printf("Acertos: %i\n", acertos);
 		printf("PERGUNTA 1: QUEM DESCOBRIU O BRASIL?\n");
 		printf("a)Pedro Alvares Cabral\n");
 		printf("b)Pedro Girotto\n");
@@ -56,13 +62,20 @@ switch(a){
 		fflush(stdin);
 		scanf("%c",&r);
 		if(r == 'a' || r == 'A'){
+			acertos++;
 			printf("\nVOCE ACERTOU!\n\n");
+			
 		}
 		else {
+			erros++;
 			printf("\nVOCE ERROU :(\n\n");
+			
 		}
 		
 		fflush(stdin);
+		
+	    printf("Erros: %i\n", erros);
+		printf("Acertos: %i\n", acertos);
 		printf("PERGUNTA 2: QUAL O FORMATO DA TERRA?\n");
 		printf("a)Redonda\n");
 		printf("b)Plana\n");
@@ -71,13 +84,18 @@ switch(a){
 		fflush(stdin);
 		scanf("%c",&r);
 		if(r == 'a' || r == 'A'){
+			acertos++;
 			printf("\nVOCE ACERTOU!\n\n");
+			
 		}
-		else {
+		else { 
+		erros++;
 			printf("\nVOCE ERROU :(\n\n");
+			
 	 }
 		
-		
+		printf("Erros: %i\n", erros);
+		printf("Acertos: %i\n", acertos);
 		printf("PERGUNTA 3: QUAL A CAPITAL DO PARA?\n");
 		printf("a)Ananindeua\n");
 		printf("b)Grao Para\n");
@@ -86,10 +104,14 @@ switch(a){
 		fflush(stdin);
 		scanf("%c",&r);
 		if(r == 'd' || r == 'D'){
+			acertos++;
 			printf("\nVOCE ACERTOU!\n\n");
+			
 		}
 		else if(r == 'a' || r == 'b' || r == 'c') {
+			erros++;
 			printf("\nVOCE ERROU :(\n\n");
+			
 		}else{
 			printf("Resposta invalida");
 		}
@@ -101,10 +123,14 @@ switch(a){
 		fflush(stdin);
 		scanf("%c",&r);
 		if(r == 'a' || r == 'A'){
+			acertos++;
 			printf("\nVOCE ACERTOU!\n\n");
+			
 		}
 		else{
+			erros++;
 			printf("\nVOCE ERROU :(\n\n");
+			
 		}
 		printf("PERGUNTA 5: QUANTO EH 1+1?\n");
 		printf("a)44\n");
@@ -114,11 +140,17 @@ switch(a){
 		fflush(stdin);
 		scanf("%c",&r);
 		if(r == 'c' || r == 'C'){
+			acertos++;
 			printf("\nVOCE ACERTOU!\n\n");
+			
 		}
 		else{
+			erros++;
 			printf("\nVOCE ERROU :(\n\n");
+			
 		} 
+		printf("Total de erros: %i\n", erros);
+		printf("Total de acertos: %i\n", acertos);
 		printf("VOCE TERMINOU O JOGO, O QUE VOCE PRETENDE FAZER AGORA?\n\n");
 		printf("1)JOGAR NOVAMENTE\n\n2)RETORNAR AO MENU\n\n");
 		scanf("%i", &x);
@@ -178,26 +210,30 @@ switch(a){
 		fflush(stdin);
 		
 		while(1){
-			printf("%s, escolha uma caixa de 1 a 5\n", p1);
+			int jogador_atual = (rand() % 2) + 1;
+			printf("%s, escolha uma caixa de 1 a 5\n", jogador == 1 ? p1 : p2);
 			scanf("%d", &escolha);
 			
-			if(escolha-1 < 1 || escolha >5 || caixa[escolha-1] != 0){
+			
+			
+			if(escolha < 1 || escolha >5 || caixa[escolha-1] != 0){
 			printf("Escolha invalida! Tente novamente.\n");			
 			continue;
 			}
 			
-			if(escolha-1 == cobra){
-				printf("A cobra estava nessa caixa, %s conseguiu sair da tumba, e voce ficou preso\n", jogador == 1 ? p1 : p2);
+			if(escolha == cobra){
+				printf("A cobra estava nessa caixa, %s perdeu\n", jogador == 1 ? p1 : p2);
 				break;
-				}else if(escolha-1 == botao){
-				printf("O botao estava nessa caixa, %s ficou preso e voce saiu da tumba!\n", jogador == 1 ? p1 : p2);
+				}else if(escolha == botao){
+				printf("O botao estava nessa caixa, %s venceu!\n", jogador == 1 ? p1 : p2);
 				break;
 			}else{
 				printf("Nao havia nada na caixa\n");
-				jogador = jogador == 1 ? 2 : 1;
-				caixa[escolha-1] = 1;
-			}
 				
+				caixa[escolha-1] = 1;
+														
+			}
+				jogador = jogador == 1 ? 2 : 1;	
 		}
 	}
 	    printf("O que desejas fazer agora?\n");
@@ -208,14 +244,16 @@ switch(a){
 		 	
 		 }else if(x == 2){
 		 	break;
+		 	
 		 }
 		
 		
 	}
 	 break;
+	 
 }
-	
+	system("cls");
 }
 
 	return 0;
-}   
+}  
