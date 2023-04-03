@@ -8,7 +8,7 @@ int main(){
 	int a;
 	while(1){
 	
-printf("\n********************************************\n");
+printf("********************************************\n");
 printf("*                                          *\n");
 printf("*                 ARCADE                   *\n");
 printf("*                                          *\n");
@@ -53,7 +53,7 @@ switch(a){
 	erros = 0;	
 		printf("\nJOGO DE PERGUNTAS E RESPOSTA\n\n");
 		printf("Erros: %i\n", erros);
-		printf("Acertos: %i\n", acertos);
+		printf("Acertos: %i\n\n", acertos);
 		printf("PERGUNTA 1: QUEM DESCOBRIU O BRASIL?\n");
 		printf("a)Pedro Alvares Cabral\n");
 		printf("b)Pedro Girotto\n");
@@ -75,7 +75,7 @@ switch(a){
 		fflush(stdin);
 		
 	    printf("Erros: %i\n", erros);
-		printf("Acertos: %i\n", acertos);
+		printf("Acertos: %i\n\n", acertos);
 		printf("PERGUNTA 2: QUAL O FORMATO DA TERRA?\n");
 		printf("a)Redonda\n");
 		printf("b)Plana\n");
@@ -95,7 +95,7 @@ switch(a){
 	 }
 		
 		printf("Erros: %i\n", erros);
-		printf("Acertos: %i\n", acertos);
+		printf("Acertos: %i\n\n", acertos);
 		printf("PERGUNTA 3: QUAL A CAPITAL DO PARA?\n");
 		printf("a)Ananindeua\n");
 		printf("b)Grao Para\n");
@@ -115,11 +115,13 @@ switch(a){
 		}else{
 			printf("Resposta invalida");
 		}
+		printf("Erros: %i\n", erros);
+		printf("Acertos: %i\n\n", acertos);
 		printf("PERGUNTA 4: QUEM EH PEDRO GIROTTO?\n");
 		printf("a)Professor de programacao do Cesupa\n");
 		printf("b)Morador de Cotijuba\n");
 		printf("c)Porteiro\n");
-		printf("d)Advogado\n");
+		printf("d)Advogado\n\n");
 		fflush(stdin);
 		scanf("%c",&r);
 		if(r == 'a' || r == 'A'){
@@ -132,11 +134,13 @@ switch(a){
 			printf("\nVOCE ERROU :(\n\n");
 			
 		}
+		printf("Erros: %i\n", erros);
+		printf("Acertos: %i\n\n", acertos);
 		printf("PERGUNTA 5: QUANTO EH 1+1?\n");
 		printf("a)44\n");
 		printf("b)1\n");
 		printf("c)2\n");
-		printf("d)100\n");
+		printf("d)11\n");
 		fflush(stdin);
 		scanf("%c",&r);
 		if(r == 'c' || r == 'C'){
@@ -149,8 +153,8 @@ switch(a){
 			printf("\nVOCE ERROU :(\n\n");
 			
 		} 
-		printf("Total de erros: %i\n", erros);
-		printf("Total de acertos: %i\n", acertos);
+		printf("\nTotal de erros: %i\n", erros);
+		printf("Total de acertos: %i\n\n", acertos);
 		printf("VOCE TERMINOU O JOGO, O QUE VOCE PRETENDE FAZER AGORA?\n\n");
 		printf("1)JOGAR NOVAMENTE\n\n2)RETORNAR AO MENU\n\n");
 		scanf("%i", &x);
@@ -236,8 +240,8 @@ switch(a){
 				jogador = jogador == 1 ? 2 : 1;	
 		}
 	}
-	    printf("O que desejas fazer agora?\n");
-	     printf("1)JOGAR NOVAMENTE\n\n2)RETORNAR AO MENU\n\n");
+	    printf("\nO que desejas fazer agora?\n");
+	     printf("\n1)JOGAR NOVAMENTE\n2)RETORNAR AO MENU\n\n");
 		 scanf("%i", &x);
 		 
 		 if(x == 1){
