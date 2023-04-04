@@ -272,6 +272,7 @@ int main(void) {
 						break;
 					}
 					scanf("%i",&x);
+					system("cls");
 					break;
 				}
 			continue;
