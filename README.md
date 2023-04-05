@@ -3,6 +3,7 @@
 #include<time.h>
 #include<stdbool.h>
 #include<locale.h>
+#include <conio.h>
 int main(void) {
 	int a,x;
 	do {
@@ -254,37 +255,139 @@ int main(void) {
 				continue;
 
 			case 3:
-
+				system("cls");
 				while(1) {
-					int x;
-					system("cls");
-					printf("***************\n");
-					printf("*EM MANUTENCAO*\n");
-					printf("***************\n");
-					printf("\nO que desejas fazer agora?\n");
-					printf("\n1)JOGAR NOVAMENTE\n2)RETORNAR AO MENU\n\n");
-					scanf("%i", &x);
 
-					if(x == 1) {
+					int jog_agora = 0;
+					int dado;
+					int gousmas_j1[2] = {1, 1};
+					int gousmas_j2[2] = {1, 1};
+					int nivel_fJ1[2] = {1, 1};
+					int nivel_fJ2[2] = {1, 1};
+					int opcao;
+					int escolha;
+					int dano;
+					int gousmaAtaque, gousmaDefesa;
+					int gousmaOriginal;
+					int ok;
+					
+					printf(" \t BEM-VINDO  \n");
+					printf(" \t      Voce esta no GOUSMAS WAR ;) \n");
+					printf(" \t BOA SORTE, PENSE BEM ANTES DE FAZER SUA JOGADA \n");
+					printf(" \t coloque 0 quando estiver pronto para jogar \n");
+					printf("--> ");
+					scanf("%f", &ok);
+					printf(" \n\n\n");
+			
+					if (opcao == 0)
 
-					} else if(x == 2) {
-						system("cls");
-						break;
-					}
-					scanf("%i",&x);
-					system("cls");
-					break;
+						while (1) { 
+					
+							printf("\nJOGADOR NUMERO 1 - Gousmas: %d,%d\n\n", nivel_fJ1[0], nivel_fJ1[1]);
+							printf("JOGADOR NUMERO 2- Gousmas: %d,%d\n\n", nivel_fJ2[0], nivel_fJ2[1]);
+
+							if (gousmas_j1[5] == 5 && gousmas_j1[1] == 0) {
+								printf("JOGADOR 2 É O VENCEDOR!\n");
+								break;
+							} else if (gousmas_j2[5] == 5 && gousmas_j2[1] == 0) {
+								printf("JOGADOR 1 EH O VENCEDOR!\n");
+								break;
+							}
+
+							if (jog_agora == 0) {
+								printf("\n FACA SUA JOGADA PLAYER 1\n\n");
+							} else {
+								printf("\n FACA SUA JOGADA PLAYER 2\n\n");
+							}
+							
+							printf("1 - ATAQUE \n");
+							printf("2 - DIVIDIR SUA GOUSMAS\n");
+							printf("Escolha: ");
+
+							scanf("%d", &escolha);
+
+							switch (escolha) {
+
+								case 1:
+									
+
+									printf(" ESCOLHA A GOUSMA QUE VOCE IRA ATACAR |1| OU |2|: ");
+									scanf("%d", &gousmaAtaque);
+
+									printf(" ESCOLHA A GOUSMA QUE SOFRERA O ATAQUE: |1| OU |2| ");
+									scanf("%d", &gousmaDefesa);
+
+									if ((jog_agora == 0 && nivel_fJ1[0] < gousmas_j1[gousmaAtaque - 1]) ||
+									        (jog_agora == 1 && nivel_fJ2[0] >= gousmas_j2[gousmaAtaque - 1])) {
+										printf("JOGADA INVALIDA, FACA NOVAMENTE\n");
+									} else {
+										int dano = nivel_fJ1[0];
+										printf("ATAQUE CAUSOU %d DE DANO!", dano);
+
+										if (jog_agora == 0) {
+											gousmas_j2[gousmaDefesa+ 1] = dano;
+											nivel_fJ2[0]++;
+										} else {
+											gousmas_j1[gousmaDefesa + 1] = dano;
+											nivel_fJ1[0]++;
+										}
+
+										if (jog_agora == 0 && nivel_fJ1[0] > 5) {
+											printf("GOUSMA %d DO PLAYER 1 FOI DESTRUIDA! ESTAMOS VENCENDO A GUERRA! \n\n", gousmaAtaque);
+
+											gousmas_j1[gousmaAtaque - 1] = 0;
+										} else if (jog_agora == 1 && nivel_fJ2[0] > 5) {
+											printf("GOUSMA %d DO PLAYER 1 FOI DESTRUIDA! ESTAMOS VENCENDO A GUERRA!\n\n", gousmaAtaque);
+
+											nivel_fJ2[0] = 0;
+										}
+
+										jog_agora = !jog_agora;
+									}
+									break;
+
+								case 2:
+								
+
+									printf("ESCOLHA A GOUSMA QUE IRA DIVIDIR |1| OU |2|: ");
+									scanf("%d", &gousmaOriginal);
+
+									if ((jog_agora == 0 && gousmas_j1[gousmaOriginal - 1] > 2) ||
+									        (jog_agora == 1 && gousmas_j2[gousmaOriginal - 1] > 2)) {
+										printf("Jogada invalida! Tente novamente.\n");
+									} else {
+
+										if (jog_agora == 0) {
+											gousmas_j1[gousmaOriginal - 1]--;
+											gousmas_j1[1]++;
+
+											printf("A GOUSMA %d DO JOGADOR 1 DIVIDIU \n\n", gousmaOriginal);
+										} else {
+											gousmas_j2[gousmaOriginal - 1]--;
+											gousmas_j2[1]++;
+
+											printf("A GOUSMA %d DO JOGADOR 1 DIVIDIU ! \n", gousmaOriginal);
+										}
+
+										jog_agora = !jog_agora;
+									}
+									break;
+							}
+						default:
+							printf("Jogada invalida! Tente novamente.\n");
+						}
+					continue;
 				}
-			continue;
 			case 4:
 				a=-1;
 				break;
-			default:
+			  
 				printf("Por favor insira uma opcao valida.\n");
 				system("pause");
 				continue;
+
+				break;
 		}
-		break;
+
 	} while (a != -1);
 }
-
