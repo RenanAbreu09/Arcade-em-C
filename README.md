@@ -256,7 +256,7 @@ int main(void) {
 
 			case 3:
 				system("cls");
-				while(1) {
+				 {
 
 					int jog_agora = 0;
 					int dado;
@@ -275,7 +275,6 @@ int main(void) {
 					printf(" \t      Voce esta no GOUSMAS WAR ;) \n");
 					printf(" \t BOA SORTE, PENSE BEM ANTES DE FAZER SUA JOGADA \n");
 					printf(" \t coloque 0 quando estiver pronto para jogar \n");
-					printf("--> ");
 					scanf("%f", &ok);
 					printf(" \n\n\n");
 			
@@ -373,8 +372,6 @@ int main(void) {
 									}
 									break;
 							}
-						default:
-							printf("Jogada invalida! Tente novamente.\n");
 						}
 					continue;
 				}
